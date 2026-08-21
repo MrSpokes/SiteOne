@@ -1,12 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     background-color: rgb(40, 40, 40);
 }
 
-.headingone {
-    text-align: center;
-    color: rgb(255, 255, 255)
+.surveyheader {
+    width: 50%;
+    height: 12.5%;
+
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 10%;
+    left: 50%;
+
+    /* outline: 3px solid red; */
 }
-.subheadingone {
+
+.headingone {
+    height: 66.6%;
+    font-size: 64px;
     text-align: center;
-    color: rgb(220, 220, 220)
+    color: rgb(255, 255, 255);
+
+    /* outline: 3px solid blue; */
+}
+
+.subheadingone {
+    height: 33.4%;
+    font-size: 32px;
+    text-align: center;
+    color: rgb(180,180,180);
+
+    /* outline: 3px solid blue; */
+}
+
+.surveybuttons {
+    width: 50%;
+    height: 100%;
+
+    transform: translate(-50%);
+    position: absolute;
+    top: 25%;
+    left: 50%;
+
+    /* outline: 3px solid blue; */
+}
+
+.surveybutton {
+    background-color: rgb(255, 255, 255);
+    box-shadow: 4px 4px 5px 1px rgba(0, 0, 0, 0.5);
+    
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    
+    width: 100%;
+    height: 10%;
+    margin-block: 10px;
+
+    border-radius: 15px;
+}
+
+.surveybutton:hover {
+    background-color: rgb(200, 200, 200);
 }
