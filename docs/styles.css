@@ -1,3 +1,12 @@
 body {
-    color: #0000ff
+    background-color: rgb(40, 40, 40);
+}
+
+.headingone {
+    text-align: center;
+    color: rgb(255, 255, 255)
+}
+.subheadingone {
+    text-align: center;
+    color: rgb(220, 220, 220)
 }
