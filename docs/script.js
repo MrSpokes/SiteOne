@@ -35,7 +35,6 @@ function renderSurveyView() {
 }
 
 async function vote(label, buttonEl) {
-  buttonEl.disabled = true;
   try {
     const res = await fetch(API_URL, {
       method: "POST",
@@ -49,8 +48,6 @@ async function vote(label, buttonEl) {
     }
   } catch (err) {
     console.error("Failed to record vote:", err);
-  } finally {
-    buttonEl.disabled = false;
   }
 }
 
