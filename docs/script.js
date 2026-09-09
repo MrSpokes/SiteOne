@@ -1,9 +1,8 @@
 const API_URL = "https://script.google.com/macros/s/AKfycbxUCI_eNqNf8eL5j_0Kot9bjaRHNKuR4uJqyZoGEWpzUASlswrffRHVbB5LVNW38m3l/exec";
 
 let currentData = {title: "", subtitle: "", buttons: []};
-const surveyView = document.getElementById("surveyView");
-
-// ---------- Loading & rendering the survey view ----------
+const loadingView = document.getElementById("loadingview");
+const surveyView = document.getElementById("surveyview");
 
 async function loadData() {
   try {
@@ -17,29 +16,32 @@ async function loadData() {
 }
 
 function renderSurveyView() {
-  document.querySelector(".headingone").textContent = currentData.title;
-  document.querySelector(".subheadingone").textContent = currentData.subtitle;
+  document.querySelector(".surveyheading").textContent = currentData.title;
+  document.querySelector(".surveysubheading").textContent = currentData.subtitle;
 
-  const container = document.querySelector(".surveybuttons");
+  const container = document.querySelector(".surveybuttonscontainer");
   container.innerHTML = "";
 
   currentData.buttons.forEach(btn => {
     const button = document.createElement("button");
     button.className = "surveybutton";
     button.textContent = btn.label;
-    button.addEventListener("click", () => vote(btn.id, button));
+    button.addEventListener("click", () => vote(btn.label, button));
     container.appendChild(button);
   });
+
+  loadingView.classList.add("hidden");
+  surveyView.classList.remove("hidden");
 }
 
-async function vote(id, buttonEl) {
+async function vote(label, buttonEl) {
   buttonEl.disabled = true;
   try {
     const res = await fetch(API_URL, {
       method: "POST",
-      // text/plain avoids a CORS preflight, which Apps Script doesn't handle
-      headers: { "Content-Type": "text/plain" },
-      body: JSON.stringify({ action: "vote", id: id })
+
+      headers: {"Content-Type": "text/plain"},
+      body: JSON.stringify({action: "vote", label: label})
     });
     const result = await res.json();
     if (!result.success) {

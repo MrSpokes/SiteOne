@@ -55,12 +55,11 @@ body {
 .surveyheader {
     container-type: size;
 
-    width: 50%;
+    width: 100%;
     height: 15%;
 
     position: fixed;
     top: 5%;
-    left: 25%;
     z-index: -1;
 }
 .surveyheading {
@@ -93,7 +92,7 @@ body {
     background-color: white;
 
     width: 100%;
-    height: 375%;
+    height: 75%;
 
     position: absolute;
     top: 25%;
@@ -102,11 +101,11 @@ body {
     width: 75%;
  
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1cqw;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2cqw;
 
     position: absolute;
-    top: 1%;
+    top: 5%;
     left: 12.5%;
 }
 .surveybutton {
@@ -114,7 +113,7 @@ body {
     transition: background-color 0.3s ease;
 
     width: 100%;
-    aspect-ratio: 6;
+    aspect-ratio: 3.5;
 
     border-radius: 1cqw;
 
