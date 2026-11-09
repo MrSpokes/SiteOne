@@ -105,7 +105,7 @@ body {
     left: 12.5%;
 }
 .surveybutton {
-    background-color: #00eb00;
+    background-color: #00b900;
 
     width: 100%;
     aspect-ratio: 3.5;
@@ -120,13 +120,13 @@ body {
     transition: background-color 0.3s ease, width 0.1s ease, font-size 0.1s ease;
 }
 .surveybutton:hover {
-    background-color: #00be00;
+    background-color: #009b00;
     width: 100%;
     font-size: 2cqw;
     transition: background-color 0.3s ease, width 0.1s ease, font-size 0.1s ease;
 }
 .surveybutton:active {
-    background-color: #00be00;
+    background-color: #009b00;
     width: 95%;
     font-size: 1.9cqw;
     transition: background-color 0.1s ease, width 0.1s ease, font-size 0.1s ease;
